@@ -10,7 +10,11 @@
 
     <title>Food Diversity - Milk</title>
     <style>
-        body, header, nav, section, footer {
+        body,
+        header,
+        nav,
+        section,
+        footer {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -65,28 +69,38 @@
     </nav>
 
     <section>
-        <h2>Milk Page</h2>
-        <p>When</p>
-        <p>この製品にはミルクが使われていますか？</p>
-        <p>Kono seihin niwa Milk wa tsukawarete imasuka?</p>
+        <h2>Milk</h2>
+        <h2>この製品にはミルクが使われていますか？</h2>
+        <h2>Kono seihin niwa Milk wa tsukawarete imasuka?</h2>
     </section>
 
-    <h1>音声読み上げデモ</h1>
+    <h1>Voice reading demo</h1>
+    <h1>When you want to check whether a product contains milk.</h1>
     <div class="main">
-      <div class="direction">
-        <label for="message">しゃべらせたいセリフを以下に入力<br>(日本語のみ、50字以内)</label>
-      </div>
-      <div class="chat-area">
-        <div class="speech-bubbles">
-          <textarea id="message" rows="3" cols="30" maxlength="50"></textarea>
+        <div class="direction">
+            <label for="message"></label>
         </div>
-      </div>
-      <div class="bottom-area">
-        <button id="play">再生</button>
-      </div>
+        <div class="chat-area">
+            <div class="speech-bubbles">
+                <textarea id="message" rows="3" cols="30" maxlength="50">この製品にはミルクが使われていますか？</textarea>
+            </div>
+        </div>
+        <div class="bottom-area">
+            <button id="play">再生</button>
+        </div>
     </div>
 
-    <script src="js/voice.js"></script>
+    <script>
+        const message = document.getElementById('message'); // セリフの入力エリア
+        const playButton = document.getElementById('play'); // 再生ボタン
+
+        // 再生ボタンをクリックしたとき、デフォルトの音声で再生
+        playButton.addEventListener('click', () => {
+            const uttr = new SpeechSynthesisUtterance(message.value);
+            uttr.lang = 'ja-JP';
+            speechSynthesis.speak(uttr);
+        });
+    </script>
 </body>
 
 </html>
