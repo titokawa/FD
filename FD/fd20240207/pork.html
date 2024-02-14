@@ -1,0 +1,106 @@
+<!-- milk.html -->
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="voice.css">
+
+    <title>Food Diversity - Pork</title>
+    <style>
+        body,
+        header,
+        nav,
+        section,
+        footer {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-image: url(images/28760896_m.jpg);
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            text-align: center;
+            padding: 1em;
+            background-color: #ddd;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 1em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 2em;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="fd.html">Food Diversity</a></h1>
+    </header>
+
+    <nav>
+        <a href="allergen.html">Allergen</a>
+        <a href="vegan.html">For Vegan</a>
+        <a href="halal.html">For Halal</a>
+    </nav>
+
+    <section>
+        <h2>Pork</h2>
+        <h2>この製品には豚肉が使われていますか？</h2>
+        <h2>Kono seihin niwa Butaniku ga tsukawarete imasuka?</h2>
+    </section>
+
+    <h1>Voice reading demo</h1>
+    <h1>When you want to check whether a product contains pork meat.</h1>
+    <div class="main">
+        <div class="direction">
+            <label for="message"></label>
+        </div>
+        <div class="chat-area"> 
+            <div class="speech-bubbles">
+                <textarea id="message" rows="3" cols="30" maxlength="50">この製品には豚肉が使われていますか？</textarea>
+            </div>
+        </div>
+        <div class="bottom-area">
+            <button id="play">Play</button>
+        </div>
+    </div>
+
+    <script>
+        const message = document.getElementById('message'); // セリフの入力エリア
+        const playButton = document.getElementById('play'); // 再生ボタン
+
+        // 再生ボタンをクリックしたとき、デフォルトの音声で再生
+        playButton.addEventListener('click', () => {
+            const uttr = new SpeechSynthesisUtterance(message.value);
+            uttr.lang = 'ja-JP';
+            speechSynthesis.speak(uttr);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Diversity - Allergen</title>
+    <style>
+        /* 同じスタイルを使用するために共通のスタイルを再利用 */
+        body, header, nav, section, footer {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-image: url(images/28760896_m.jpg);
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            text-align: center;
+            padding: 1em;
+            background-color: #ddd;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 1em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 2em;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* ボタンのスタイル */
+        .allergen-btn {
+            background-color: #f5f5f5;
+            color: #333;
+            padding: 0.5em 1em;
+            margin: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><a href="fd.html">Food Diversity</a></h1>
+    </header>
+
+    <nav>
+        <a href="allergen.html">Allergen</a>
+        <a href="vegan.html">For Vegan</a>
+        <a href="halal.html">For Halal</a>
+    </nav>
+
+    <section id="halal">
+        <h2>Halal Page</h2>
+        <!-- ハラル食材のボタン -->
+        <button class="halal-btn" onclick="showIngredientPage('pork')">Pork</button>
+        <button class="halal-btn" onclick="showIngredientPage('alcohol')">Alcohol</button>
+        <button class="halal-btn" onclick="showIngredientPage('seafoods')">Seafoods</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Food Diversity</p>
+    </footer>
+
+    <script>
+        // ボタンがクリックされた時の処理
+        function showIngredientPage(ingredient) {
+            window.location.href = ingredient + ".html"; // 対応する食材のページに遷移
+        }
+    </script>
+</body>
+
+</html>
